@@ -1,4 +1,8 @@
 # DVC.Net
+
+[![Publish NuGet Package](https://github.com/itamadev/DVC.Net/actions/workflows/nuget-push.yml/badge.svg)](https://github.com/itamadev/DVC.Net/actions/workflows/nuget-push.yml)
+[![DVC.Net Badge](https://img.shields.io/nuget/v/DVC.Net?label=DVC.Net)](https://www.nuget.org/packages/DVC.Net)
+
 .NET Binding to DVC by iterative.ai utilizing DVC in C# based software
 
 ## Installation
