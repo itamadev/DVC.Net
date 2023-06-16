@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+	  <None Remove="Modules\dvc-2.55.0-py3-none-any.whl"></None>
+	  <None Remove="Modules\dvc_s3-2.22.0-py3-none-any.whl"></None>
+  </ItemGroup>
+
+  <ItemGroup>
+	 <EmbeddedResource Include="Modules\dvc-2.55.0-py3-none-any.whl"></EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+ 	 <EmbeddedResource Include="Modules\dvc_s3-2.22.0-py3-none-any.whl"></EmbeddedResource>
+  </ItemGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="Python.Included" Version="3.11.2" />
+  </ItemGroup>
+
+</Project>
