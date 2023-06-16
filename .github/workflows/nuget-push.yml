@@ -25,9 +25,9 @@ jobs:
 
     - name: Build and publish NuGet package
       run: |
-        Version=$(echo "$TAG_NAME" | sed 's/^v//')
-        echo "Last tag is: $Version";
-        dotnet pack --no-restore -c Release -o package /p:PackageVersion=$Version /p:Version=$Version;
+        Version=$(echo "$GITHUB_REF_NAME" | sed 's/^v//')
+        echo "Last tag is: $Version"
+        dotnet pack --no-restore -c Release -o package /p:PackageVersion=$Version /p:Version=$Version
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
 
