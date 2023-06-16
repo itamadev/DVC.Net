@@ -17,10 +17,17 @@ jobs:
       with:
         dotnet-version: '6.0.x'
 
+    - name: Check .NET info
+      run: dotnet --info
+
+    - name: Install dependencies
+      run: dotnet restore
+
     - name: Build and publish NuGet package
       run: |
-        $Version = "$(echo $TAG_NAME | sed 's/^v//')";
-        dotnet pack -c Release -o package /p:PackageVersion=$Version /p:Version=$Version;
+        Version=$(echo "$TAG_NAME" | sed 's/^v//')
+        echo "Last tag is: $Version";
+        dotnet pack --no-restore -c Release -o package /p:PackageVersion=$Version /p:Version=$Version;
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
 
