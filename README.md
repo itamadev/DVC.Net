@@ -1,5 +1,5 @@
 # DVC.Net
-.NET Binding to the Iterative's DVC utilizing DVC in C# based software
+.NET Binding to DVC by iterative.ai utilizing DVC in C# based software
 
 ## Installation
 
