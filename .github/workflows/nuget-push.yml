@@ -24,9 +24,8 @@ jobs:
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
 
-    - name: Push NuGet package to NuGet.org
-      uses: nuget/push@v1
-      with:
-        nuget-api-key: ${{ secrets.NUGET_API_KEY }}
-        nuget-source: 'https://api.nuget.org/v3/index.json'
-        package: './package/*.nupkg'
+    - name: Publish NuGet package to Nuget.org
+      run: |
+        nuget push ./package/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey $NUGET_API_KEY
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
